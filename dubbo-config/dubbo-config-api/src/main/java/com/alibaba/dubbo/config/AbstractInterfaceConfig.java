@@ -205,6 +205,12 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
         if (monitor == null) {
             String monitorAddress = ConfigUtils.getProperty("dubbo.monitor.address");
             String monitorProtocol = ConfigUtils.getProperty("dubbo.monitor.protocol");
+            String ignore = ConfigUtils.getProperty("dubbo.monitor.ignore");
+            
+            if("true".equals(ignore)) {
+            	return null;
+            }
+            
             if (monitorAddress != null && monitorAddress.length() > 0
                     || monitorProtocol != null && monitorProtocol.length() > 0) {
                 monitor = new MonitorConfig();
@@ -221,6 +227,16 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
             map.put(Constants.PID_KEY, String.valueOf(ConfigUtils.getPid()));
         }
         appendParameters(map, monitor);
+        
+        boolean ignore = monitor.getIgnore();
+        String sysignore = System.getProperty("dubbo.monitor.ignore");
+        if(sysignore != null) {
+        	ignore = "true".equals(sysignore);
+        }
+        if(ignore) {
+        	return null;
+        }
+        
         String address = monitor.getAddress();
         String sysaddress = System.getProperty("dubbo.monitor.address");
         if (sysaddress != null && sysaddress.length() > 0) {

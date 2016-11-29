@@ -40,6 +40,8 @@ public class MonitorConfig extends AbstractConfig {
 	private String group;
 
     private String version;
+    
+    private boolean ignore;
 
     // 自定义参数
     private Map<String, String> parameters;
@@ -122,5 +124,13 @@ public class MonitorConfig extends AbstractConfig {
     public void setDefault(Boolean isDefault) {
         this.isDefault = isDefault;
     }
+
+	public boolean getIgnore() {
+		return ignore;
+	}
+
+	public void setIgnore(boolean ignore) {
+		this.ignore = ignore;
+	}
 
 }

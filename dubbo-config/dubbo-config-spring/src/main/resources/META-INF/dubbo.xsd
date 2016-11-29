@@ -520,24 +520,29 @@
 	
 	<xsd:complexType name="monitorType">
 		<xsd:sequence minOccurs="0" maxOccurs="unbounded">
-			<xsd:element ref="parameter" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element ref="parameter" minOccurs="0"
+				maxOccurs="unbounded" />
 		</xsd:sequence>
-		<xsd:attribute name="address" type="xsd:string" use="optional">
+		<xsd:attribute name="address" type="xsd:string"
+			use="optional">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[ The monitor address. ]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="protocol" type="xsd:string" use="optional">
+		<xsd:attribute name="protocol" type="xsd:string"
+			use="optional">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[ The monitor protocol. ]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="username" type="xsd:string" use="optional">
+		<xsd:attribute name="username" type="xsd:string"
+			use="optional">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[ The monitor username. ]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="password" type="xsd:string" use="optional">
+		<xsd:attribute name="password" type="xsd:string"
+			use="optional">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[ The monitor password. ]]></xsd:documentation>
 			</xsd:annotation>
@@ -547,18 +552,21 @@
 				<xsd:documentation><![CDATA[ The monitor group. ]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="version" type="xsd:string" use="optional">
+		<xsd:attribute name="version" type="xsd:string"
+			use="optional">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[ The monitor version. ]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
-		<xsd:attribute name="default" type="xsd:string" use="optional">
+		<xsd:attribute name="default" type="xsd:string"
+			use="optional">
 			<xsd:annotation>
 				<xsd:documentation><![CDATA[ Is default. ]]></xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
+		<xsd:attribute name="ignore" type="xsd:boolean"></xsd:attribute>
 	</xsd:complexType>
-	
+
 	<xsd:complexType name="parameterType">
 		<xsd:attribute name="key" type="xsd:string" use="required">
 			<xsd:annotation>
